@@ -1,5 +1,3 @@
-
-
 public class QuickUnionWeightedUF  {
     private int[] id;
     private int[] size;
@@ -13,7 +11,6 @@ public class QuickUnionWeightedUF  {
             id[i] = i;
             size[i] = 1;
         }
-
     }
     
     public int count() {
@@ -22,6 +19,8 @@ public class QuickUnionWeightedUF  {
 
     private int root ( int i ) {
         while ( i != id[i] ) {
+            // Uncomment below line for PATH Compression
+            // id[i] = id[id[i]];
             i = id[i];
         }
     return i;
